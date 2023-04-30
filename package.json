@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/madoomino/some-sort-of-nodejs-framework__pretends-not-to-be-an-express-clone__/issues"
   },
-  "homepage": "https://github.com/madoomino/some-sort-of-nodejs-framework__pretends-not-to-be-an-express-clone__#readme"
+  "homepage": "https://github.com/madoomino/some-sort-of-nodejs-framework__pretends-not-to-be-an-express-clone__#readme",
+  "dependencies": {
+    "methods": "^1.1.2"
+  }
 }
