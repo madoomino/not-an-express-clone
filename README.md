@@ -8,4 +8,4 @@
   - creating an app object (the application base).
   - creating a router object (deals with routing).
   - creating route function (takes a path and chains different http methods on it).
-  - creating Layer constructor (carries most of the detalis).
+  - creating Layer constructor (carries most of the route needs).
