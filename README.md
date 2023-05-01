@@ -3,7 +3,8 @@
 
 ## Tasks
 
-- Creating a very mimimal library, which matches only one route.
+- Creating a very minimal library, which matches only one route.
   - creating a function that returns nodejs application.
-  - creating an app object which is the application base.
-  - creating a router object which deals with routing.
+  - creating an app object (the application base).
+  - creating a router object (deals with routing).
+  - creating route function (takes a path and chains different http methods on it).
