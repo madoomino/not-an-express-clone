@@ -1,5 +1,7 @@
+module.exports = Route;
 const methods = require("methods");
-const flatten = require("flatten");
+const flatten = require("array-flatten");
+const Layer = require("./Layer");
 
 function Route(path) {
   this.path = path;
@@ -8,16 +10,19 @@ function Route(path) {
   this.methods = {};
 }
 
+Route.prototype.dispatch = function dispatch(req, res, done) {};
+
 methods.forEach(function (method) {
   Route.prototype[method] = function () {
     const handles = flatten(Array.prototype.slice.call(arguments));
+
     for (let i = 0; i < handles.length; i++) {
       const handle = handles[i];
 
       if (typeof handle !== "function") {
         const type = toString.call(handle);
         const msg =
-          "Route. " +
+          "Route." +
           method +
           "() requires a callback function but got a " +
           type;

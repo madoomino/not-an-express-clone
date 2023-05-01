@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/madoomino/some-sort-of-nodejs-framework__pretends-not-to-be-an-express-clone__#readme",
   "dependencies": {
-    "flatten": "^1.0.3",
+    "array-flatten": "^2.1.1",
+    "merge-descriptors": "^1.0.1",
     "methods": "^1.1.2",
     "setprototypeof": "^1.2.0"
   }
