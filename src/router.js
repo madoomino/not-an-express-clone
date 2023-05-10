@@ -34,30 +34,35 @@ proto.route = function route(path) {
   return route;
 };
 
-proto.handle = function handle(req, res, out) {
+proto.handle = function handle(req, res, next) {
   const self = this;
   const stack = self.stack;
-  const path = getPathname(req);
-
-  let layer;
-  let match;
-  let route;
   let idx = 0;
 
-  while (match !== true && idx < stack.length) {
-    layer = stack[idx++];
-    match = matchLayer(layer, path);
-    route = layer.route;
+  next();
 
-    if (match !== true) {
-      continue;
+  function next() {
+    const path = getPathname(req);
+
+    let layer;
+    let match;
+    let route;
+
+    while (match !== true && idx < stack.length) {
+      layer = stack[idx++];
+      match = matchLayer(layer, path);
+      route = layer.route;
+
+      if (match !== true) {
+        continue;
+      }
+
+      if (!route) {
+        continue;
+      }
+
+      route.stack[0].handle_request(req, res, next);
     }
-
-    if (!route) {
-      continue;
-    }
-
-    route.stack[0].handle_request(req, res);
   }
 };
 

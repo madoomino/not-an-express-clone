@@ -1,21 +1,15 @@
 const express = require("./src/aFramework");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.writeHead(200);
-  res.write("Hello world!");
-  res.end();
+app.get("/", (req, res, next) => {
+  console.log("first!");
+  next();
 });
 
-app.get("/2", (req, res) => {
+app.get("/", (req, res, next) => {
+  console.log("second!");
   res.writeHead(200);
-  res.write("Hello world! 2");
-  res.end();
-});
-
-app.get("/3", (req, res) => {
-  res.writeHead(200);
-  res.write("Hello world! 3");
+  res.write("finished");
   res.end();
 });
 
