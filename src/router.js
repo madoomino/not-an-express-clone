@@ -63,6 +63,9 @@ proto.handle = function handle(req, res, next) {
 
       route.stack[0].handle_request(req, res, next);
     }
+    if (match) {
+      layer.handle_request(req, res, next);
+    }
   }
 };
 
@@ -73,6 +76,15 @@ function matchLayer(layer, path) {
     return error;
   }
 }
+
+proto.use = function use(fn) {
+  const layer = new Layer("/", {}, fn);
+
+  layer.route = undefined;
+  this.stack.push(layer);
+
+  return this;
+};
 
 function getPathname(req) {
   try {

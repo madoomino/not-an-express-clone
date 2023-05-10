@@ -2,6 +2,7 @@ const methods = require("methods");
 const Router = require("./router");
 const slice = Array.prototype.slice;
 const http = require("http");
+const middleware = require("./middleware/init");
 
 const app = (exports = module.exports = {});
 
@@ -17,6 +18,7 @@ app.lazyrouter = function lazyrouter() {
   if (!this._router) {
     this._router = new Router({});
   }
+  this._router.use(middleware.init(this));
 };
 
 methods.forEach(function (method) {

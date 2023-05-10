@@ -2,14 +2,20 @@ const express = require("./src/aFramework");
 const app = express();
 
 app.get("/", (req, res, next) => {
-  console.log("first!");
+  console.log(next);
   next();
 });
 
-app.get("/", (req, res, next) => {
-  console.log("second!");
+app.get("/", (req, res) => {
   res.writeHead(200);
-  res.write("finished");
+  res.write("Response from second matching route");
+  res.send("hello world");
+  res.end();
+});
+
+app.post("/post", (req, res) => {
+  res.writeHead(200);
+  res.write("Data from post :)");
   res.end();
 });
 
