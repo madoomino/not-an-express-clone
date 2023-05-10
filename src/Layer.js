@@ -20,3 +20,7 @@ Layer.prototype.handle_request = function handle(req, res, next) {
     console.error(err);
   }
 };
+
+Layer.prototype.match = function match(path) {
+  return this.route.path === path;
+};

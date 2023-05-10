@@ -21,6 +21,7 @@
     "array-flatten": "^2.1.1",
     "merge-descriptors": "^1.0.1",
     "methods": "^1.1.2",
+    "parseurl": "^1.3.3",
     "setprototypeof": "^1.2.0"
   }
 }

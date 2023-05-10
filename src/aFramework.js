@@ -4,7 +4,7 @@ const mixin = require("merge-descriptors");
 exports = module.exports = createApplication;
 
 function createApplication() {
-  let app = function (req, res, next) {
+  const app = function (req, res, next) {
     app.handle(req, res, next);
   };
 
