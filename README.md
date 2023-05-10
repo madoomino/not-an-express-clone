@@ -1,5 +1,5 @@
-# some-sort-of-nodejs-framework__pretends-not-to-be-an-express-clone__
-### A Node.js framework that is meant to be an educational project to gain more knowledge about how Node.js actually works.
+# some sort of nodejs framework pretends not to be an express-clone
+### A Node.js framework that is meant to be an educational project to gain more knowledge about how Node.js & express actually work.
 
 ## Tasks
 
